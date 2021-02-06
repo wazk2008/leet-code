@@ -27,6 +27,7 @@ public class Code5658Not {
 //            pre = 一种是加上当前的元素，一种是只要当前自己
 //            例：pre=-1, num=2 => 此时 pre=2
 //            例：pre=1, num=2 => 此时 pre=3
+//            例：pre=-10,num=1 => 此时 pre=?   需要看下一个，next=-10,pre=-9  next=10,pre=1
             pre = Math.max( Math.abs(temp+num) , Math.abs(num));
             System.out.println(Math.abs(temp+num) +"\t"+ Math.abs(num));
             if (Math.abs(num) >= Math.abs(temp+num)) {

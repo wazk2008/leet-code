@@ -16,12 +16,20 @@ public class Code665 {
 
     public static boolean checkPossibility(int[] nums) {
         int len = nums.length;
-        for (int i = 1; i < len-1; i++) {
+        int count = 0;
+        for (int i = 1; i < len; i++) {
             int pre = nums[i-1];
             int cur = nums[i];
-            int next = nums[i+1];
-            if (pre > cur && cur > next) {
-                return false;
+
+            if (pre > cur) {
+                if (i==1 || nums[i] >= nums[i-2]){
+                    nums[i-1] = nums[i];
+                } else {
+                    nums[i] = nums[i-1];
+                }
+                if (++count > 1) {
+                    return false;
+                }
             }
         }
         return true;

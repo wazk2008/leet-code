@@ -27,6 +27,8 @@ public class Code552 {
         int res = 0;
 
 //        "P" 随便放置
+//        参数说明：absent由于A不要求连续，所以下次递归时要求保证A的数量
+//        参数说明：late由于要求连续不能超过2个，所以有L时递归到此时，为放置P的时刻，所以late的数量重新置为0
         res = (res + dfs(day+1, n, absent, 0, memo)) % MOD;
 
 //        "A" 最多只能放置1个

@@ -66,9 +66,13 @@ public class Code787 {
         f[0][src] = 0;
         for (int t = 1; t < k+2; t++) {
             for (int[] flight : flights) {
+//                起点
                 int j = flight[0];
+//                终点
                 int i = flight[1];
+//                起点到终点的花费
                 int cost = flight[2];
+//                行走t步到达i站的所需最小花费
                 f[t][i] = Math.min(f[t][i], f[t-1][j]+cost);
             }
         }
